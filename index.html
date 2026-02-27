@@ -1,155 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixar Quiz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            padding: 20px;
-        }
-        .quiz-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .question h3 {
-            margin-bottom: 10px;
-        }
-        .options {
-            list-style-type: none;
-            padding: 0;
-        }
-        .options li {
-            margin-bottom: 10px;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #0056b3;
-        }
-        .result {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Generation Gap Console</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Pixar Storytelling Quiz</h1>
-        <form id="quiz-form">
-            <div class="question">
-                <h3>1. What is the first step in Pixar's typical story structure?</h3>
-                <ul class="options">
-                    <li><input type="radio" name="q1" value="A"> A. Everyday</li>
-                    <li><input type="radio" name="q1" value="B"> B. Once Upon a Time There Was</li>
-                    <li><input type="radio" name="q1" value="C"> C. One Day</li>
-                    <li><input type="radio" name="q1" value="D"> D. Until Finally</li>
-                </ul>
-            </div>
-            <div class="question">
-                <h3>2. What is Pixar's approach to coincidences in their films?</h3>
-                <ul class="options">
-                    <li><input type="radio" name="q2" value="A"> A. To get characters out of trouble</li>
-                    <li><input type="radio" name="q2" value="B"> B. To put characters in tough situations</li>
-                    <li><input type="radio" name="q2" value="C"> C. To provide easy solutions</li>
-                    <li><input type="radio" name="q2" value="D"> D. To introduce new characters</li>
-                </ul>
-            </div>
-            <div class="question">
-                <h3>3. Which emotion does Joy from Inside Out initially ignore?</h3>
-                <ul class="options">
-                    <li><input type="radio" name="q3" value="A"> A. Fear</li>
-                    <li><input type="radio" name="q3" value="B"> B. Anger</li>
-                    <li><input type="radio" name="q3" value="C"> C. Sadness</li>
-                    <li><input type="radio" name="q3" value="D"> D. Disgust</li>
-                </ul>
-            </div>
-            <div class="question">
-                <h3>4. How does Pixar ensure their characters feel real and complex?</h3>
-                <ul class="options">
-                    <li><input type="radio" name="q4" value="A"> A. By making them always agreeable</li>
-                    <li><input type="radio" name="q4" value="B"> B. By giving them real opinions</li>
-                    <li><input type="radio" name="q4" value="C"> C. By avoiding internal conflicts</li>
-                    <li><input type="radio" name="q4" value="D"> D. By focusing on their strengths only</li>
-                </ul>
-            </div>
-            <div class="question">
-                <h3>5. What is a "Pixar Moment"?</h3>
-                <ul class="options">
-                    <li><input type="radio" name="q5" value="A"> A. The point where everything clicks and the lesson is learned</li>
-                    <li><input type="radio" name="q5" value="B"> B. The climax of the film's action</li>
-                    <li><input type="radio" name="q5" value="C"> C. The introduction of a new character</li>
-                    <li><input type="radio" name="q5" value="D"> D. The opening scene of the film</li>
-                </ul>
-            </div>
-            <button type="button" onclick="submitQuiz()">Submit</button>
-        </form>
-        <div id="result" class="result"></div>
+
+<div class="console">
+
+  <h1 class="title">Generation Gap: Gaming Evolution</h1>
+
+  <div class="menu">
+    <div class="tile active" data-section="silent">
+      <h2>Silent Gen</h2>
+      <p>Pre-Digital Era</p>
     </div>
 
-    <script>
-        function submitQuiz() {
-            const quizForm = document.getElementById('quiz-form');
-            const formData = new FormData(quizForm);
-            let score = 0;
-            let feedback = '';
+    <div class="tile" data-section="genx">
+      <h2>Gen X</h2>
+      <p>Arcade Era</p>
+    </div>
 
-            if (formData.get('q1') === 'B') {
-                score++;
-            } else {
-                feedback += '<p>Question 1: The correct answer is B. Once Upon a Time There Was</p>';
-            }
+    <div class="tile" data-section="millennial">
+      <h2>Millennial</h2>
+      <p>Console Era</p>
+    </div>
 
-            if (formData.get('q2') === 'B') {
-                score++;
-            } else {
-                feedback += '<p>Question 2: The correct answer is B. To put characters in tough situations</p>';
-            }
+    <div class="tile" data-section="genz">
+      <h2>Gen Z</h2>
+      <p>Online Era</p>
+    </div>
+  </div>
 
-            if (formData.get('q3') === 'C') {
-                score++;
-            } else {
-                feedback += '<p>Question 3: The correct answer is C. Sadness</p>';
-            }
+</div>
 
-            if (formData.get('q4') === 'B') {
-                score++;
-            } else {
-                feedback += '<p>Question 4: The correct answer is B. By giving them real opinions</p>';
-            }
-
-            if (formData.get('q5') === 'A') {
-                score++;
-            } else {
-                feedback += '<p>Question 5: The correct answer is A. The point where everything clicks and the lesson is learned</p>';
-            }
-
-            const result = document.getElementById('result');
-            result.innerHTML = `You scored ${score} out of 5.<br>${feedback}`;
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
