@@ -89,3 +89,31 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #F4E7D6, #E9D4C0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: introFade 2.5s ease forwards;
+}
+
+.intro-content {
+  text-align: center;
+  opacity: 0;
+  animation: introText 2s ease forwards;
+}
+
+@keyframes introText {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes introFade {
+  0% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
