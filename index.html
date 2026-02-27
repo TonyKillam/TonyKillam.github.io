@@ -6,40 +6,60 @@
 </head>
 <body>
 
+<div class="intro-screen" id="intro">
+  <div class="intro-content">
+    <h1>Generation Gap</h1>
+    <p>A Digital Evolution Story</p>
+  </div>
+</div>
+<div class="bg-layer" id="bgLayer"></div>
 <div class="hero">
   <h1>Generation Gap</h1>
   <p>How Gaming Shaped Each Generation</p>
 </div>
 
-<div class="row">
-  <h2>Generational Eras</h2>
-
+<<div class="row">
+  <h2>Foundations</h2>
   <div class="card-row">
+    <div class="card" data-gen="intro">Intro</div>
+    <div class="card" data-gen="hook">Hook</div>
+    <div class="card" data-gen="background">Background Study</div>
+    <div class="card" data-gen="reasoning">Why This Topic?</div>
+    <div class="card" data-gen="current">Current Event</div>
+  </div>
+</div>
 
-    <div class="card silent" data-gen="silent">
-      <h3>Silent Generation</h3>
-      <p>Pre-Digital Era</p>
-    </div>
+<div class="row">
+  <h2>Generational Interviews</h2>
+  <div class="card-row">
+    <div class="card" data-gen="silent">Silent Generation</div>
+    <div class="card" data-gen="genx">Generation X</div>
+    <div class="card" data-gen="millennial">Millennial</div>
+    <div class="card" data-gen="genz">Gen Z</div>
+  </div>
+</div>
 
-    <div class="card genx" data-gen="genx">
-      <h3>Generation X</h3>
-      <p>Arcade & Early Console</p>
-    </div>
-
-    <div class="card millennial" data-gen="millennial">
-      <h3>Millennial</h3>
-      <p>Console & Early Online</p>
-    </div>
-
-    <div class="card genz" data-gen="genz">
-      <h3>Gen Z</h3>
-      <p>Always Connected</p>
-    </div>
-
+<div class="row">
+  <h2>Reflection & Analysis</h2>
+  <div class="card-row">
+    <div class="card" data-gen="dok">DOK</div>
+    <div class="card" data-gen="learning">Learning Stretch</div>
+    <div class="card" data-gen="civic">Civic Connection</div>
+    <div class="card" data-gen="takeaways">3 Key Takeaways</div>
+    <div class="card" data-gen="conclusion">Conclusion</div>
   </div>
 </div>
 
 <div class="overlay" id="overlay"></div>
+  <div class="progress-bar">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
+  <div class="timeline">
+  <div>1940s</div>
+  <div>1980s</div>
+  <div>2000s</div>
+  <div>2020s</div>
+</div>
 
 <script src="script.js"></script>
 </body>
