@@ -1,30 +1,24 @@
-import { WORDS } from "./words.js";
+const tiles = document.querySelectorAll(".tile");
+let currentIndex = 0;
 
-const NUMBER_OF_GUESSES = 6
-let guessesRemaining = NUMBER_OF_GUESSES;
-let currentGuess = [];
-let nextLetter = 0;
-let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
-console.log(rightGuessString)
-function initBoard() {
-    let board = document.getElementById("game-board");
+document.addEventListener("keydown", (e) => {
 
-    for (let i = 0; 1 < NUMBER_OF_GUESSES; i++) {
-        let row = document.createElement("div")
-        row.className = "letter-row"
+  if (e.key === "ArrowRight") {
+    move(1);
+  }
 
-        for (let j = 0; j < 5; j++) {
-            let box = document.createElement("div")
-            box.className = "letter-box"
-            row.appendChild(box)
-        }   
+  if (e.key === "ArrowLeft") {
+    move(-1);
+  }
 
-        board.appendChild(row)
-    }
+});
+
+function move(direction) {
+  tiles[currentIndex].classList.remove("active");
+  currentIndex += direction;
+
+  if (currentIndex < 0) currentIndex = tiles.length - 1;
+  if (currentIndex >= tiles.length) currentIndex = 0;
+
+  tiles[currentIndex].classList.add("active");
 }
-
-initBoard()
-
-
-
-
