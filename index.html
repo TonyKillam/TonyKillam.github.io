@@ -1,39 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Generation Gap Console</title>
+  <title>Generation Gap</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="console">
+<div class="hero">
+  <h1>Generation Gap</h1>
+  <p>How Gaming Shaped Each Generation</p>
+</div>
 
-  <h1 class="title">Generation Gap: Gaming Evolution</h1>
+<div class="row">
+  <h2>Generational Eras</h2>
 
-  <div class="menu">
-    <div class="tile active" data-section="silent">
-      <h2>Silent Gen</h2>
+  <div class="card-row">
+
+    <div class="card silent" data-gen="silent">
+      <h3>Silent Generation</h3>
       <p>Pre-Digital Era</p>
     </div>
 
-    <div class="tile" data-section="genx">
-      <h2>Gen X</h2>
-      <p>Arcade Era</p>
+    <div class="card genx" data-gen="genx">
+      <h3>Generation X</h3>
+      <p>Arcade & Early Console</p>
     </div>
 
-    <div class="tile" data-section="millennial">
-      <h2>Millennial</h2>
-      <p>Console Era</p>
+    <div class="card millennial" data-gen="millennial">
+      <h3>Millennial</h3>
+      <p>Console & Early Online</p>
     </div>
 
-    <div class="tile" data-section="genz">
-      <h2>Gen Z</h2>
-      <p>Online Era</p>
+    <div class="card genz" data-gen="genz">
+      <h3>Gen Z</h3>
+      <p>Always Connected</p>
     </div>
+
   </div>
-
 </div>
+
+<div class="overlay" id="overlay"></div>
 
 <script src="script.js"></script>
 </body>
