@@ -34,3 +34,43 @@ document.addEventListener("keydown", (e) => {
     closeSection();
   }
 });
+
+let presentationMode = true;
+let currentIndex = 0;
+
+function autoAdvance() {
+
+  if (!presentationMode) return;
+
+  const order = [
+  "intro",
+  "hook",
+  "background",
+  "reasoning",
+  "current",
+  "silent",
+  "genx",
+  "millennial",
+  "genz",
+  "dok",
+  "learning",
+  "civic",
+  "takeaways",
+  "conclusion"
+];
+  openSection(order[currentIndex]);
+
+  currentIndex++;
+
+  if (currentIndex >= order.length) {
+    currentIndex = 0;
+  }
+
+  setTimeout(() => {
+    closeSection();
+  }, 12000);
+
+  setTimeout(autoAdvance, 15000);
+}
+
+
