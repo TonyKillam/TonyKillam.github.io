@@ -1,31 +1,48 @@
-h1 {
- text-align: center;
-}
-
-#game-board {
-  display: flex;
-  align-items: center; 
-  flex-direction: column;
-}
-
-.letter-box {
-  border: 2px solid gray;
-  border-radius: 3px;
-  margin: 2px;
-  font-size: 2.5rem;
-  height: 3rem;
-  width: 3rem;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #F6E9D7, #EED9C4);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
 }
 
-.filled-box {
-  border: 2px solid black;
+.console {
+  width: 90%;
+  text-align: center;
 }
 
-.letter-row {
- display: flex;
+.title {
+  font-size: 2rem;
+  margin-bottom: 40px;
 }
 
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.tile {
+  width: 220px;
+  height: 160px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.tile h2 {
+  margin: 0;
+}
+
+.tile.active {
+  transform: scale(1.1);
+  opacity: 1;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  border: 3px solid #4CAF50;
+}
