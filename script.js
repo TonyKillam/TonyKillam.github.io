@@ -1,24 +1,43 @@
-const tiles = document.querySelectorAll(".tile");
-let currentIndex = 0;
+const cards = document.querySelectorAll(".card");
+const overlay = document.getElementById("overlay");
 
-document.addEventListener("keydown", (e) => {
-
-  if (e.key === "ArrowRight") {
-    move(1);
-  }
-
-  if (e.key === "ArrowLeft") {
-    move(-1);
-  }
-
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    openSection(card.dataset.gen);
+  });
 });
 
-function move(direction) {
-  tiles[currentIndex].classList.remove("active");
-  currentIndex += direction;
+function openSection(gen) {
 
-  if (currentIndex < 0) currentIndex = tiles.length - 1;
-  if (currentIndex >= tiles.length) currentIndex = 0;
+  const content = {
+    silent: `
+      <h1>Silent Generation</h1>
+      <p>No video games growing up. Entertainment was physical, outdoor, and face-to-face.</p>
+    `,
+    genx: `
+      <h1>Generation X</h1>
+      <p>Arcades and early consoles. Gaming was fun, but not central to identity.</p>
+    `,
+    millennial: `
+      <h1>Millennials</h1>
+      <p>Console era & early online play. Gaming became personal and meaningful.</p>
+    `,
+    genz: `
+      <h1>Gen Z</h1>
+      <p>Always connected. Gaming is social, cultural, and daily communication.</p>
+    `
+  };
 
-  tiles[currentIndex].classList.add("active");
+  overlay.innerHTML = content[gen] + `<button onclick="closeSection()">Back</button>`;
+  overlay.style.display = "block";
 }
+
+function closeSection() {
+  overlay.style.display = "none";
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeSection();
+  }
+});
